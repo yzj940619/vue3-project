@@ -1,0 +1,7 @@
+# 在 git add过程中将 window 默认的 crlf 转化为 mac 的 lf
+*.js eol=lf
+*.ts eol=lf
+*.jsx eol=lf
+*.json eol=lf
+*.vue eol=lf
+*.md eol=lf
