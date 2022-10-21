@@ -17,6 +17,7 @@ module.exports = {
   ],
   // link:https://stylelint.io/user-guide/rules/list
   rules: {
+    'no-empty-source': null,
     'selector-pseudo-class-no-unknown': [
       true,
       {
@@ -51,10 +52,7 @@ module.exports = {
     'font-family-no-missing-generic-family-keyword': null,
     'declaration-colon-space-after': 'always-single-line',
     'declaration-colon-space-before': 'never',
-    'declaration-empty-line-before': [
-      'always',
-      { ignore: ['first-nested', 'after-comment', 'after-declaration'] },
-    ],
+    'declaration-empty-line-before': ['always', { ignore: ['first-nested', 'after-comment', 'after-declaration'] }],
     'rule-empty-line-before': [
       'always',
       {
@@ -69,13 +67,7 @@ module.exports = {
     ],
     // link:https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md
     'order/order': [
-      [
-        'dollar-variables',
-        'custom-properties',
-        'at-rules',
-        'declarations',
-        'rules',
-      ],
+      ['dollar-variables', 'custom-properties', 'at-rules', 'declarations', 'rules'],
       {
         severity: 'warning',
       },
@@ -89,15 +81,7 @@ module.exports = {
           groupName: 'position',
           emptyLineBefore: 'threshold',
           noEmptyLineBetween: true,
-          properties: [
-            'position',
-            'z-index',
-            'top',
-            'right',
-            'bottom',
-            'left',
-            'transform',
-          ],
+          properties: ['position', 'z-index', 'top', 'right', 'bottom', 'left', 'transform'],
         },
         {
           groupName: 'flex',

@@ -2,20 +2,20 @@ module.exports = {
   root: true,
   globals: {
     defineEmits: 'readonly',
-    defineProps: 'readonly'
+    defineProps: 'readonly',
   },
-  plugins: ['@typescript-eslint/eslint-plugin'],
+  plugins: ['@typescript-eslint'],
   extends: [
     'airbnb-base',
     'plugin:import/recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser', // 解决引入 type {} 报错问题
     sourceType: 'module',
-    ecmaVersion: 2020
+    ecmaVersion: 2020,
   },
   rules: {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -23,11 +23,6 @@ module.exports = {
     'no-bitwise': 'off',
     'no-tabs': 'off',
     'array-element-newline': ['error', 'consistent'],
-    indent: [
-      'error',
-      2,
-      { MemberExpression: 0, SwitchCase: 1, ignoredNodes: ['TemplateLiteral'] }
-    ],
     quotes: ['error', 'single'],
     'comma-dangle': ['error', 'always-multiline'],
     'object-curly-spacing': ['error', 'always'],
@@ -36,7 +31,6 @@ module.exports = {
     'linebreak-style': 'off',
     'eol-last': 'off',
     'no-shadow': 'off',
-    // 'no-unused-vars': 'warn',
     'arrow-parens': 'off',
     semi: ['error', 'always'],
     eqeqeq: 'off',
@@ -86,35 +80,44 @@ module.exports = {
     '@typescript-eslint/ban-types': 'off',
 
     // vue link:https://eslint.vuejs.org/rules/
+    'vue/multi-word-component-names': 'off',
     'vue/max-attributes-per-line': [
       'warn',
       {
         singleline: {
-          max: 3
+          max: 3,
         },
         multiline: {
-          max: 1
-        }
-      }
+          max: 1,
+        },
+      },
+    ],
+    'vue/component-tags-order': [
+      'error',
+      {
+        order: ['script', 'template', 'style'],
+      },
     ],
     'vue/require-explicit-emits': [
       'error',
       {
-        allowProps: true
-      }
+        allowProps: true,
+      },
     ],
     'vue/v-on-event-hyphenation': [
       'error',
       'always',
       {
-        autofix: true
-      }
+        autofix: true,
+      },
     ],
+    'vue/define-props-declaration': 'error',
+    'vue/define-emits-declaration': 'error',
     'vue/define-macros-order': [
       'error',
       {
-        order: ['defineProps', 'defineEmits']
-      }
+        order: ['defineProps', 'defineEmits'],
+      },
     ],
     'vue/html-comment-content-newline': 'warn',
     'vue/html-comment-content-spacing': 'warn',
@@ -126,15 +129,15 @@ module.exports = {
       'warn',
       {
         presets: ['vue', 'vue-router'],
-        threshold: 5
-      }
+        threshold: 5,
+      },
     ],
     'vue/no-ref-object-destructure': 'warn',
     'vue/no-required-prop-with-default': [
       'warn',
       {
-        autofix: true
-      }
+        autofix: true,
+      },
     ],
     'vue/no-this-in-before-route-enter': 'error',
     'vue/no-undef-properties': 'warn',
@@ -143,8 +146,8 @@ module.exports = {
       'warn',
       {
         ignoreIncludesComment: false,
-        ignoreStringEscape: true
-      }
+        ignoreStringEscape: true,
+      },
     ],
     'vue/no-useless-v-bind': 'warn',
     'vue/no-v-text': 'error',
@@ -155,6 +158,6 @@ module.exports = {
     'vue/prefer-true-attribute-shorthand': 'warn',
     'vue/require-direct-export': 'error',
     'vue/v-for-delimiter-style': 'warn',
-    'vue/v-on-function-call': 'warn'
-  }
+    'vue/v-on-function-call': 'warn',
+  },
 };

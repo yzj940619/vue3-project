@@ -2,21 +2,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "eslint.alwaysShowStatus": true,
   "eslint.options": {
     "overrideConfigFile": ".eslintrc.cjs"
   },
   "stylelint.validate": ["css", "less", "postcss", "scss", "vue", "sass"],
-  "cSpell.words": [
-    "autofix",
-    "commitlint",
-    "stylelint",
-    "Vite"
-  ]
+  "cSpell.words": ["autofix", "commitlint", "stylelint", "Vite"]
 }

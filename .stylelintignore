@@ -1,8 +1,10 @@
 node_modules
 dist
-!.*
+.*
 *.js
 *.ts
+*.json
+*.svg
 *.png
 *.jpg
 *.webp
